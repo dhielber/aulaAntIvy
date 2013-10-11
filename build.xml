@@ -1,0 +1,27 @@
+<project name="PojetoAnt" default="test" basedir=".">
+	
+	<property name="source" value="src" />
+	<property name="build" value="bin" />
+	<property name="dist" value="dist" />
+	
+	<target name="init" depends="clean">
+		<echo message="Ola, Mundo!" />
+		<mkdir dir="${build}" />
+		<mkdir dir="${source}" />
+		<mkdir dir="${dist}" />
+	</target>
+	
+	<target name="clean">
+		<delete dir="${build}" />
+		<delete dir="${dist}" />
+	</target>
+		
+	<target name="compile" depends="init">
+		<javac srcdir="${source}" destdir="${build}"></javac>
+		<exclude name="*Test*"/>
+	</target>
+	
+	<target name="test" depends="compile">
+		<java classname="ClasseCachorroTeste" />
+	</target>
+</project>
