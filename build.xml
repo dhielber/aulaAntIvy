@@ -22,6 +22,9 @@
 	</target>
 	
 	<target name="test" depends="compile">
-		<java classname="ClasseCachorroTeste" />
+		<junit>
+			<classpath refid="ClasseCachorroTest"></classpath>
+			<test name="ClasseCachorroTest"></test>
+		</junit> 
 	</target>
 </project>
